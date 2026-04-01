@@ -475,6 +475,7 @@ ul { list-style: none; }
   justify-content: center;
   position: relative;
   overflow: hidden;
+  animation: counterSpin 8s linear infinite;
 }
 
 .avatar-photo {
@@ -1483,6 +1484,8 @@ a.contact-value:hover { color: var(--accent-secondary); }
 .ecom-icon   { background: rgba(251,191,36,0.12); color: var(--accent-amber); }
 .health-icon { background: rgba(244,114,182,0.12); color: var(--accent-tertiary); }
 .travel-icon { background: rgba(34,211,238,0.12); color: var(--accent-secondary); }
+.food-icon   { background: rgba(251,146,60,0.15); color: #fb923c; }
+.taxi-icon   { background: rgba(250,204,21,0.15); color: #facc15; }
 
 .live-status {
   display: flex;
