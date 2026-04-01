@@ -477,16 +477,15 @@ ul { list-style: none; }
   overflow: hidden;
 }
 
-.avatar-initials {
-  font-size: 6rem;
-  font-weight: 900;
-  font-family: var(--font-mono);
-  background: var(--gradient-text);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  letter-spacing: -4px;
-  animation: counterSpin 8s linear infinite;
+.avatar-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 50%;
+  display: block;
+  position: relative;
+  z-index: 1;
 }
 
 .avatar-glow {
@@ -645,6 +644,42 @@ ul { list-style: none; }
   display: flex;
   flex-direction: column;
   gap: 20px;
+}
+
+/* About profile photo card */
+.about-profile-photo {
+  position: relative;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  height: 220px;
+}
+.about-photo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  transition: transform 0.5s ease;
+}
+.about-profile-photo:hover .about-photo-img { transform: scale(1.04); }
+.about-photo-overlay {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  padding: 20px 20px 16px;
+  background: linear-gradient(to top, rgba(5,11,21,0.95) 0%, transparent 100%);
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.about-photo-name {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+.about-photo-role {
+  font-size: 0.78rem;
+  color: var(--accent-secondary);
+  font-weight: 500;
 }
 
 .about-card {
@@ -1261,7 +1296,104 @@ a.contact-value:hover { color: var(--accent-secondary); }
 }
 .back-to-top:hover { transform: translateY(-4px); box-shadow: 0 8px 28px rgba(99,102,241,0.5); }
 
-/* ---------- 17. ANIMATIONS ---------- */
+/* ---------- 16b. WHATSAPP FLOAT ---------- */
+.whatsapp-float {
+  position: fixed;
+  bottom: 90px;
+  right: 28px;
+  width: 56px; height: 56px;
+  border-radius: 50%;
+  background: #25d366;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  color: #fff;
+  z-index: 900;
+  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.45);
+  transition: all var(--transition);
+  text-decoration: none;
+}
+.whatsapp-float:hover {
+  transform: translateY(-4px) scale(1.08);
+  box-shadow: 0 8px 32px rgba(37, 211, 102, 0.6);
+  background: #20bf5c;
+}
+.whatsapp-float::before {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  border: 2px solid rgba(37,211,102,0.4);
+  animation: waRing 2s ease-out infinite;
+}
+@keyframes waRing {
+  0%   { transform: scale(1); opacity: 0.8; }
+  100% { transform: scale(1.5); opacity: 0; }
+}
+.wa-tooltip {
+  position: absolute;
+  right: 68px;
+  background: rgba(10, 22, 40, 0.92);
+  color: #fff;
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 30px;
+  white-space: nowrap;
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(12px);
+  opacity: 0;
+  transform: translateX(8px);
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+.whatsapp-float:hover .wa-tooltip {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ---------- 16c. PROJECT LINK BUTTONS ---------- */
+.proj-link-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 5px 12px;
+  border-radius: 50px;
+  transition: all var(--transition);
+  text-decoration: none;
+  white-space: nowrap;
+}
+.proj-live {
+  background: rgba(34,211,238,0.12);
+  color: var(--accent-secondary);
+  border: 1px solid rgba(34,211,238,0.3);
+}
+.proj-live:hover {
+  background: rgba(34,211,238,0.22);
+  color: #fff;
+  transform: translateY(-2px);
+}
+.proj-gh {
+  background: rgba(255,255,255,0.05);
+  color: var(--text-secondary);
+  border: 1px solid var(--glass-border);
+}
+.proj-gh:hover {
+  background: rgba(255,255,255,0.1);
+  color: var(--text-primary);
+  transform: translateY(-2px);
+}
+.project-links {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+
 @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 @keyframes fadeInDown { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
 @keyframes fadeInRight { from { opacity: 0; transform: translateX(40px); } to { opacity: 1; transform: translateX(0); } }

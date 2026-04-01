@@ -232,44 +232,56 @@ window.addEventListener('resize', () => {
   createParticles();
 }, { passive: true });
 
-// ─── 8. CONTACT FORM ───────────────────────────
+// ─── 8. CONTACT FORM → WHATSAPP ────────────────
 const contactForm = document.getElementById('contact-form');
 const formSuccess = document.getElementById('form-success');
 
 contactForm.addEventListener('submit', (e) => {
   e.preventDefault();
 
-  const name = document.getElementById('cf-name').value.trim();
-  const email = document.getElementById('cf-email').value.trim();
+  const name    = document.getElementById('cf-name').value.trim();
+  const email   = document.getElementById('cf-email').value.trim();
+  const subject = document.getElementById('cf-subject').value.trim();
   const message = document.getElementById('cf-message').value.trim();
-  const btn = document.getElementById('send-msg-btn');
+  const btn     = document.getElementById('send-msg-btn');
 
   if (!name || !email || !message) {
-    // Shake fields
     [document.getElementById('cf-name'), document.getElementById('cf-email'), document.getElementById('cf-message')].forEach(el => {
       if (!el.value.trim()) {
         el.style.borderColor = '#f87171';
         el.style.boxShadow = '0 0 0 3px rgba(248,113,113,0.15)';
-        setTimeout(() => {
-          el.style.borderColor = '';
-          el.style.boxShadow = '';
-        }, 2000);
+        setTimeout(() => { el.style.borderColor = ''; el.style.boxShadow = ''; }, 2000);
       }
     });
     return;
   }
 
-  // Simulate sending
-  btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+  // Show loading state
+  btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Opening WhatsApp...';
   btn.disabled = true;
+
+  // Build WhatsApp message
+  const waText = [
+    `👋 Hi Ankit! I'm ${name}.`,
+    subject ? `📌 Subject: ${subject}` : '',
+    `📧 Email: ${email}`,
+    ``,
+    `💬 ${message}`,
+  ].filter(Boolean).join('\n');
+
+  const waUrl = `https://wa.me/916394848987?text=${encodeURIComponent(waText)}`;
 
   setTimeout(() => {
     formSuccess.classList.add('show');
     contactForm.reset();
     btn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Message';
     btn.disabled = false;
+
+    // Open WhatsApp in new tab
+    window.open(waUrl, '_blank', 'noopener,noreferrer');
+
     setTimeout(() => formSuccess.classList.remove('show'), 5000);
-  }, 1400);
+  }, 900);
 });
 
 // ─── 9. BACK TO TOP ────────────────────────────

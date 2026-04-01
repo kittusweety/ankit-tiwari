@@ -111,7 +111,7 @@
     <div class="hero-visual" aria-hidden="true">
       <div class="avatar-ring">
         <div class="avatar-inner">
-          <div class="avatar-initials">AT</div>
+          <img src="assets/profile.png" alt="Ankit Tiwari" class="avatar-photo" />
           <div class="avatar-glow"></div>
         </div>
       </div>
@@ -175,6 +175,13 @@
           </div>
         </div>
         <div class="about-cards">
+          <div class="about-profile-photo glass-card">
+            <img src="assets/profile.png" alt="Ankit Tiwari" class="about-photo-img" />
+            <div class="about-photo-overlay">
+              <span class="about-photo-name">Ankit Tiwari</span>
+              <span class="about-photo-role">Senior Software Developer</span>
+            </div>
+          </div>
           <div class="about-card glass-card" id="fintech-card">
             <div class="card-icon fintech-icon">
               <i class="fas fa-wallet"></i>
@@ -429,6 +436,9 @@
             <div class="project-icon">
               <i class="fas fa-school"></i>
             </div>
+            <div class="project-links">
+              <a href="https://github.com/kittusweety" target="_blank" rel="noopener noreferrer" class="proj-link-btn proj-gh"><i class="fab fa-github"></i> Code</a>
+            </div>
           </div>
           <h3 class="project-title">School ERP System</h3>
           <p class="project-desc">
@@ -452,6 +462,10 @@
             <div class="project-icon">
               <i class="fas fa-box"></i>
             </div>
+            <div class="project-links">
+              <a href="https://delhiparcel.com" target="_blank" rel="noopener noreferrer" class="proj-link-btn proj-live"><i class="fas fa-external-link-alt"></i> Live</a>
+              <a href="https://github.com/kittusweety" target="_blank" rel="noopener noreferrer" class="proj-link-btn proj-gh"><i class="fab fa-github"></i></a>
+            </div>
           </div>
           <h3 class="project-title">Parcel Delivery Platform</h3>
           <p class="project-desc">
@@ -474,6 +488,10 @@
           <div class="project-top">
             <div class="project-icon">
               <i class="fas fa-ship"></i>
+            </div>
+            <div class="project-links">
+              <a href="https://ibooking.in" target="_blank" rel="noopener noreferrer" class="proj-link-btn proj-live"><i class="fas fa-external-link-alt"></i> Live</a>
+              <a href="https://github.com/kittusweety" target="_blank" rel="noopener noreferrer" class="proj-link-btn proj-gh"><i class="fab fa-github"></i></a>
             </div>
           </div>
           <h3 class="project-title">Yacht Booking Website</h3>
@@ -803,7 +821,7 @@
               <i class="fas fa-paper-plane"></i> Send Message
             </button>
             <div class="form-success" id="form-success" aria-live="polite">
-              <i class="fas fa-check-circle"></i> Message sent successfully! I'll get back to you soon.
+              <i class="fab fa-whatsapp"></i> Opening WhatsApp... You'll be redirected to chat with Ankit directly!
             </div>
           </form>
         </div>
@@ -839,6 +857,13 @@
   <button class="back-to-top" id="back-to-top" aria-label="Back to top">
     <i class="fas fa-chevron-up"></i>
   </button>
+  <!-- Floating WhatsApp Button -->
+  <a href="https://wa.me/916394848987?text=Hi%20Ankit%2C%20I%20visited%20your%20portfolio%20and%20would%20like%20to%20connect!"
+     target="_blank" rel="noopener noreferrer"
+     class="whatsapp-float" id="whatsapp-float" aria-label="Chat on WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+    <span class="wa-tooltip">Chat on WhatsApp</span>
+  </a>
 
   <script src="script.js"></script>
 </body>
