@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Ankit Tiwari – Senior Software Developer specializing in Laravel, Node.js, React, and FinTech platforms. Based in Delhi, India." />
+  <meta name="keywords" content="Ankit Tiwari, Software Developer, Laravel, Node.js, React, FinTech, Delhi, Full Stack Developer" />
+  <meta name="author" content="Ankit Tiwari" />
+  <meta property="og:title" content="Ankit Tiwari | Senior Software Developer" />
+  <meta property="og:description" content="Full-stack developer specializing in Laravel, Node.js, React, and FinTech platforms." />
+  <meta property="og:type" content="website" />
+  <title>Ankit Tiwari | Senior Software Developer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Animated Background -->
+  <div class="bg-canvas" aria-hidden="true">
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-2"></div>
+    <div class="bg-orb orb-3"></div>
+    <canvas id="particle-canvas"></canvas>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
+    <div class="nav-container">
+      <a href="#hero" class="nav-logo" aria-label="Ankit Tiwari Home">
+        <span class="logo-bracket">&lt;</span>AT<span class="logo-bracket">/&gt;</span>
+      </a>
+      <ul class="nav-links" id="nav-links" role="list">
+        <li><a href="#about" class="nav-link" data-section="about">About</a></li>
+        <li><a href="#skills" class="nav-link" data-section="skills">Skills</a></li>
+        <li><a href="#experience" class="nav-link" data-section="experience">Experience</a></li>
+        <li><a href="#projects" class="nav-link" data-section="projects">Projects</a></li>
+        <li><a href="#live" class="nav-link" data-section="live">Live Work</a></li>
+        <li><a href="#education" class="nav-link" data-section="education">Education</a></li>
+        <li><a href="#contact" class="nav-link" data-section="contact">Contact</a></li>
+      </ul>
+      <button class="nav-cta" id="hire-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+        Hire Me
+      </button>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+    <ul role="list">
+      <li><a href="#about" class="mobile-link">About</a></li>
+      <li><a href="#skills" class="mobile-link">Skills</a></li>
+      <li><a href="#experience" class="mobile-link">Experience</a></li>
+      <li><a href="#projects" class="mobile-link">Projects</a></li>
+      <li><a href="#live" class="mobile-link">Live Work</a></li>
+      <li><a href="#education" class="mobile-link">Education</a></li>
+      <li><a href="#contact" class="mobile-link">Contact</a></li>
+    </ul>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero" id="hero" aria-label="Hero section">
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        <span>Available for opportunities</span>
+      </div>
+      <h1 class="hero-name">
+        <span class="name-first">Ankit</span>
+        <span class="name-last">Tiwari</span>
+      </h1>
+      <div class="hero-title">
+        <span class="static-text">I build </span>
+        <span class="dynamic-text" id="dynamic-text" aria-live="polite"></span>
+        <span class="cursor-blink">|</span>
+      </div>
+      <p class="hero-desc">
+        Senior Software Developer with 2+ years crafting scalable FinTech &amp; enterprise applications.
+        Specializing in <span class="highlight">Laravel</span>, <span class="highlight">Node.js</span>, and <span class="highlight">React</span>.
+      </p>
+      <div class="hero-actions">
+        <a href="#projects" class="btn btn-primary" id="view-work-btn">
+          <i class="fas fa-rocket"></i> View My Work
+        </a>
+        <a href="#contact" class="btn btn-outline" id="get-touch-btn">
+          <i class="fas fa-envelope"></i> Get In Touch
+        </a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <span class="stat-number" data-target="2">0</span><span class="stat-plus">+</span>
+          <span class="stat-label">Years Exp.</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-number" data-target="10">0</span><span class="stat-plus">+</span>
+          <span class="stat-label">Live Projects</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-number" data-target="10">0</span><span class="stat-plus">+</span>
+          <span class="stat-label">Technologies</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-visual" aria-hidden="true">
+      <div class="avatar-ring">
+        <div class="avatar-inner">
+          <div class="avatar-initials">AT</div>
+          <div class="avatar-glow"></div>
+        </div>
+      </div>
+      <div class="floating-card card-top-right">
+        <i class="fab fa-node-js node-icon"></i>
+        <span>Node.js</span>
+      </div>
+      <div class="floating-card card-bottom-left">
+        <i class="fab fa-laravel laravel-icon"></i>
+        <span>Laravel</span>
+      </div>
+      <div class="floating-card card-top-left">
+        <i class="fab fa-react react-icon"></i>
+        <span>React</span>
+      </div>
+    </div>
+    <div class="scroll-indicator" aria-label="Scroll down">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="section about-section" id="about" aria-label="About me">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">// about_me</span>
+        <h2 class="section-title">Who I Am</h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-text">
+          <p class="about-intro">
+            I'm a <strong>Senior Software Developer</strong> based in Delhi, India, passionate about building robust, scalable web applications that solve real business problems.
+          </p>
+          <p>
+            My expertise spans <strong>FinTech platforms</strong> — from Digital Wallets and AEPS to UPI integrations and payment gateways. I thrive in environments that demand secure, high-availability API architectures and clean, maintainable codebases.
+          </p>
+          <p>
+            When I'm not coding, I enjoy collaborative problem-solving, team mentorship, and staying ahead of emerging web technologies.
+          </p>
+          <div class="about-info-grid">
+            <div class="info-item">
+              <i class="fas fa-map-marker-alt"></i>
+              <span>Delhi, India</span>
+            </div>
+            <div class="info-item">
+              <i class="fas fa-phone"></i>
+              <span>+91 6394848987</span>
+            </div>
+            <div class="info-item">
+              <i class="fas fa-envelope"></i>
+              <span>a17tiwari@gmail.com</span>
+            </div>
+            <div class="info-item">
+              <i class="fab fa-linkedin"></i>
+              <a href="https://linkedin.com/in/ankit-tiwari-96886037" target="_blank" rel="noopener noreferrer">LinkedIn Profile</a>
+            </div>
+          </div>
+          <div class="about-actions">
+            <a href="#contact" class="btn btn-primary btn-sm">Let's Connect</a>
+          </div>
+        </div>
+        <div class="about-cards">
+          <div class="about-card glass-card" id="fintech-card">
+            <div class="card-icon fintech-icon">
+              <i class="fas fa-wallet"></i>
+            </div>
+            <h3>FinTech Specialist</h3>
+            <p>Digital Wallets, AEPS, UPI integrations, and payment gateway systems.</p>
+          </div>
+          <div class="about-card glass-card" id="backend-card">
+            <div class="card-icon backend-icon">
+              <i class="fas fa-server"></i>
+            </div>
+            <h3>Backend Expert</h3>
+            <p>Secure, scalable RESTful APIs with Laravel and Node.js.</p>
+          </div>
+          <div class="about-card glass-card" id="fullstack-card">
+            <div class="card-icon fullstack-icon">
+              <i class="fas fa-layer-group"></i>
+            </div>
+            <h3>Full-Stack Dev</h3>
+            <p>From database design to responsive React dashboards.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section class="section skills-section" id="skills" aria-label="Technical skills">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">// tech_stack</span>
+        <h2 class="section-title">Skills & Technologies</h2>
+      </div>
+      <div class="skills-grid">
+
+        <div class="skill-category glass-card" id="frameworks-skill">
+          <div class="skill-cat-header">
+            <i class="fas fa-cubes"></i>
+            <h3>Frameworks & Libraries</h3>
+          </div>
+          <div class="skill-pills">
+            <span class="skill-pill pill-green"><i class="fab fa-node-js"></i> Node.js</span>
+            <span class="skill-pill pill-red"><i class="fab fa-laravel"></i> Laravel</span>
+            <span class="skill-pill pill-blue"><i class="fab fa-react"></i> React.js</span>
+            <span class="skill-pill pill-black"><i class="fab fa-js"></i> Next.js</span>
+            <span class="skill-pill pill-purple">ASP.NET 8 Core</span>
+            <span class="skill-pill pill-gray">MVC Core</span>
+          </div>
+        </div>
+
+        <div class="skill-category glass-card" id="languages-skill">
+          <div class="skill-cat-header">
+            <i class="fas fa-code"></i>
+            <h3>Languages</h3>
+          </div>
+          <div class="skill-pills">
+            <span class="skill-pill pill-blue"><i class="fab fa-js-square"></i> JavaScript</span>
+            <span class="skill-pill pill-purple">C#</span>
+            <span class="skill-pill pill-orange"><i class="fab fa-php"></i> PHP</span>
+            <span class="skill-pill pill-gray">C / C++</span>
+            <span class="skill-pill pill-blue2">SQL</span>
+            <span class="skill-pill pill-orange2"><i class="fab fa-html5"></i> HTML</span>
+            <span class="skill-pill pill-blue3"><i class="fab fa-css3-alt"></i> CSS</span>
+          </div>
+        </div>
+
+        <div class="skill-category glass-card" id="databases-skill">
+          <div class="skill-cat-header">
+            <i class="fas fa-database"></i>
+            <h3>Databases</h3>
+          </div>
+          <div class="skill-pills">
+            <span class="skill-pill pill-blue">SQL Server</span>
+            <span class="skill-pill pill-orange">MySQL</span>
+            <span class="skill-pill pill-green">Supabase</span>
+          </div>
+        </div>
+
+        <div class="skill-category glass-card" id="tools-skill">
+          <div class="skill-cat-header">
+            <i class="fas fa-tools"></i>
+            <h3>Tools & DevOps</h3>
+          </div>
+          <div class="skill-pills">
+            <span class="skill-pill pill-orange"><i class="fab fa-git-alt"></i> Git</span>
+            <span class="skill-pill pill-black"><i class="fab fa-github"></i> GitHub</span>
+            <span class="skill-pill pill-blue"><i class="fab fa-docker"></i> Docker</span>
+            <span class="skill-pill pill-green">CI/CD</span>
+            <span class="skill-pill pill-gray"><i class="fab fa-linux"></i> Linux</span>
+          </div>
+        </div>
+
+        <div class="skill-category glass-card" id="ui-skill">
+          <div class="skill-cat-header">
+            <i class="fas fa-paint-brush"></i>
+            <h3>UI Frameworks</h3>
+          </div>
+          <div class="skill-pills">
+            <span class="skill-pill pill-purple">Bootstrap</span>
+            <span class="skill-pill pill-blue">Tailwind CSS</span>
+          </div>
+        </div>
+
+        <div class="skill-category glass-card" id="soft-skill">
+          <div class="skill-cat-header">
+            <i class="fas fa-brain"></i>
+            <h3>Soft Skills</h3>
+          </div>
+          <div class="skill-pills">
+            <span class="skill-pill pill-teal">Analytical Thinking</span>
+            <span class="skill-pill pill-indigo">Team Collaboration</span>
+            <span class="skill-pill pill-rose">Problem Solving</span>
+            <span class="skill-pill pill-amber">Quick Learner</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience Section -->
+  <section class="section experience-section" id="experience" aria-label="Work experience">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">// work_history</span>
+        <h2 class="section-title">Work Experience</h2>
+      </div>
+      <div class="timeline">
+
+        <div class="timeline-item" id="exp-1">
+          <div class="timeline-marker">
+            <div class="marker-dot"></div>
+            <div class="marker-line"></div>
+          </div>
+          <div class="timeline-card glass-card">
+            <div class="exp-header">
+              <div>
+                <h3 class="exp-role">Senior Software Developer</h3>
+                <span class="exp-company">Harifly Technologies Pvt. Ltd.</span>
+              </div>
+              <span class="exp-date">Sep 2025 – Present</span>
+            </div>
+            <div class="exp-tag-row">
+              <span class="exp-tag">FinTech</span>
+              <span class="exp-tag">Node.js</span>
+              <span class="exp-tag">Laravel</span>
+              <span class="exp-tag">React</span>
+            </div>
+            <ul class="exp-bullets">
+              <li>Leading development of FinTech platforms including <strong>Digital Wallets, AEPS, Cashfree UPI</strong>, and payment gateway integrations.</li>
+              <li>Primary focus on backend development using <strong>Node.js and Laravel</strong>, building secure, scalable, and high-availability APIs.</li>
+              <li>Developed <strong>real-time transaction processing systems</strong> with robust validation, logging, and reconciliation mechanisms.</li>
+              <li>Built responsive front-end interfaces using <strong>React</strong> for admin panels and customer dashboards.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="timeline-item" id="exp-2">
+          <div class="timeline-marker">
+            <div class="marker-dot"></div>
+            <div class="marker-line"></div>
+          </div>
+          <div class="timeline-card glass-card">
+            <div class="exp-header">
+              <div>
+                <h3 class="exp-role">Software Developer</h3>
+                <span class="exp-company">Bhoomi Techzone Pvt. Ltd.</span>
+              </div>
+              <span class="exp-date">Jan 2025 – Sep 2025</span>
+            </div>
+            <div class="exp-tag-row">
+              <span class="exp-tag">Laravel</span>
+              <span class="exp-tag">Node.js</span>
+              <span class="exp-tag">ASP.NET Core</span>
+              <span class="exp-tag">SQL Server</span>
+            </div>
+            <ul class="exp-bullets">
+              <li>Developed and maintained enterprise applications using <strong>Laravel, Node.js, ASP.NET Core, C#</strong>, and SQL Server.</li>
+              <li>Designed and implemented RESTful APIs with secure <strong>authentication and authorization</strong> mechanisms.</li>
+              <li>Oversaw, coordinated, and guided small teams to ensure timely delivery and adherence to project requirements.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="timeline-item" id="exp-3">
+          <div class="timeline-marker">
+            <div class="marker-dot"></div>
+          </div>
+          <div class="timeline-card glass-card">
+            <div class="exp-header">
+              <div>
+                <h3 class="exp-role">Trainee Software Developer</h3>
+                <span class="exp-company">Bhoomi Techzone Pvt. Ltd.</span>
+              </div>
+              <span class="exp-date">Aug 2024 – Dec 2024</span>
+            </div>
+            <div class="exp-tag-row">
+              <span class="exp-tag">Laravel</span>
+              <span class="exp-tag">Node.js</span>
+              <span class="exp-tag">React</span>
+              <span class="exp-tag">CI/CD</span>
+            </div>
+            <ul class="exp-bullets">
+              <li>Developed full-stack web applications using <strong>Laravel and Node.js</strong> along with HTML, CSS, JavaScript, React, and SQL.</li>
+              <li>Built Web and RESTful APIs and integrated <strong>third-party services</strong> to extend application functionality.</li>
+              <li>Implemented <strong>CI/CD pipelines</strong> using GitHub Actions and Docker for automated builds and deployments.</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section class="section projects-section" id="projects" aria-label="My projects">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">// selected_work</span>
+        <h2 class="section-title">Featured Projects</h2>
+      </div>
+      <div class="projects-grid">
+
+        <div class="project-card glass-card featured" id="proj-fintech">
+          <div class="project-top">
+            <div class="project-icon">
+              <i class="fas fa-wallet"></i>
+            </div>
+            <div class="project-links">
+              <span class="project-featured-badge">Featured</span>
+            </div>
+          </div>
+          <h3 class="project-title">FinTech Wallet & Payment Platform</h3>
+          <p class="project-desc">
+            A comprehensive FinTech platform supporting Digital Wallets, AEPS transactions, UPI, bank transfers, and multiple payment modules with secure transaction flows and real-time monitoring.
+          </p>
+          <ul class="project-highlights">
+            <li>Role-based access control (admin, distributor, retailer)</li>
+            <li>Scalable REST APIs with transaction validation & reconciliation</li>
+            <li>Admin dashboards for monitoring and reporting</li>
+          </ul>
+          <div class="project-stack">
+            <span class="stack-tag">Node.js</span>
+            <span class="stack-tag">React</span>
+            <span class="stack-tag">Tailwind CSS</span>
+            <span class="stack-tag">MySQL</span>
+          </div>
+        </div>
+
+        <div class="project-card glass-card" id="proj-erp">
+          <div class="project-top">
+            <div class="project-icon">
+              <i class="fas fa-school"></i>
+            </div>
+          </div>
+          <h3 class="project-title">School ERP System</h3>
+          <p class="project-desc">
+            Role-based ERP system for schools with authentication, dashboards, and performance tracking designed with modular MVC architecture.
+          </p>
+          <ul class="project-highlights">
+            <li>Modular backend using MVC architecture</li>
+            <li>Student/Teacher/Admin role dashboards</li>
+            <li>Scalable & maintainable codebase</li>
+          </ul>
+          <div class="project-stack">
+            <span class="stack-tag">ASP.NET Core</span>
+            <span class="stack-tag">C#</span>
+            <span class="stack-tag">SQL</span>
+            <span class="stack-tag">Bootstrap</span>
+          </div>
+        </div>
+
+        <div class="project-card glass-card" id="proj-parcel">
+          <div class="project-top">
+            <div class="project-icon">
+              <i class="fas fa-box"></i>
+            </div>
+          </div>
+          <h3 class="project-title">Parcel Delivery Platform</h3>
+          <p class="project-desc">
+            Real-time parcel tracking platform with order management and interactive dashboards, powered by scalable APIs and a responsive UI.
+          </p>
+          <ul class="project-highlights">
+            <li>Real-time parcel tracking system</li>
+            <li>Interactive order management dashboard</li>
+            <li>Scalable Node.js APIs</li>
+          </ul>
+          <div class="project-stack">
+            <span class="stack-tag">Node.js</span>
+            <span class="stack-tag">React.js</span>
+            <span class="stack-tag">EJS</span>
+            <span class="stack-tag">Tailwind CSS</span>
+          </div>
+        </div>
+
+        <div class="project-card glass-card" id="proj-yacht">
+          <div class="project-top">
+            <div class="project-icon">
+              <i class="fas fa-ship"></i>
+            </div>
+          </div>
+          <h3 class="project-title">Yacht Booking Website</h3>
+          <p class="project-desc">
+            Online yacht booking system with reservation management and a customer portal built with Laravel and a sleek modern interface.
+          </p>
+          <ul class="project-highlights">
+            <li>Reservation management system</li>
+            <li>Customer portal with booking history</li>
+            <li>Laravel + MySQL backend</li>
+          </ul>
+          <div class="project-stack">
+            <span class="stack-tag">Laravel</span>
+            <span class="stack-tag">PHP</span>
+            <span class="stack-tag">MySQL</span>
+            <span class="stack-tag">Tailwind CSS</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Live Projects Section -->
+  <section class="section live-section" id="live" aria-label="Live deployed projects">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">// live_deployments</span>
+        <h2 class="section-title">Live Projects</h2>
+        <p class="section-subtitle">Real-world applications live in production — 10 platforms built &amp; deployed.</p>
+      </div>
+
+      <!-- Category: Enterprise CRM -->
+      <div class="live-category">
+        <div class="live-cat-label">
+          <i class="fas fa-briefcase"></i>
+          <span>Enterprise CRM &amp; Business Solutions</span>
+        </div>
+        <div class="live-grid">
+          <a href="https://sales.harifly.com" target="_blank" rel="noopener noreferrer" class="live-card glass-card" id="live-harifly">
+            <div class="live-card-top">
+              <div class="live-icon crm-icon"><i class="fas fa-chart-line"></i></div>
+              <div class="live-status"><span class="live-dot"></span>Live</div>
+            </div>
+            <h3 class="live-title">Harifly Sales CRM</h3>
+            <p class="live-desc">Internal sales dashboard for managing FinTech operations and team performance.</p>
+            <span class="live-url">sales.harifly.com <i class="fas fa-arrow-up-right-from-square"></i></span>
+          </a>
+          <a href="https://crm.doctcareservices.com" target="_blank" rel="noopener noreferrer" class="live-card glass-card" id="live-doctcrm">
+            <div class="live-card-top">
+              <div class="live-icon crm-icon"><i class="fas fa-hospital-user"></i></div>
+              <div class="live-status"><span class="live-dot"></span>Live</div>
+            </div>
+            <h3 class="live-title">DoctCare CRM</h3>
+            <p class="live-desc">Healthcare admin panel for managing patient records, appointments, and operations.</p>
+            <span class="live-url">crm.doctcareservices.com <i class="fas fa-arrow-up-right-from-square"></i></span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Category: E-commerce -->
+      <div class="live-category">
+        <div class="live-cat-label">
+          <i class="fas fa-shopping-bag"></i>
+          <span>E-commerce &amp; Service Platforms</span>
+        </div>
+        <div class="live-grid live-grid-3">
+          <a href="https://wcac.in" target="_blank" rel="noopener noreferrer" class="live-card glass-card" id="live-wcac">
+            <div class="live-card-top">
+              <div class="live-icon ecom-icon"><i class="fas fa-store"></i></div>
+              <div class="live-status"><span class="live-dot"></span>Live</div>
+            </div>
+            <h3 class="live-title">WCAC Portal</h3>
+            <p class="live-desc">Full-featured e-commerce platform with product management and order workflows.</p>
+            <span class="live-url">wcac.in <i class="fas fa-arrow-up-right-from-square"></i></span>
+          </a>
+          <a href="https://blinkme.online/admin" target="_blank" rel="noopener noreferrer" class="live-card glass-card" id="live-blinkme">
+            <div class="live-card-top">
+              <div class="live-icon ecom-icon"><i class="fas fa-bolt"></i></div>
+              <div class="live-status"><span class="live-dot"></span>Live</div>
+            </div>
+            <h3 class="live-title">Blinkme</h3>
+            <p class="live-desc">10-minute service booking app with admin panel for rapid order and provider management.</p>
+            <span class="live-url">blinkme.online <i class="fas fa-arrow-up-right-from-square"></i></span>
+          </a>
+          <a href="https://delhiparcel.com" target="_blank" rel="noopener noreferrer" class="live-card glass-card" id="live-delhiparcel">
+            <div class="live-card-top">
+              <div class="live-icon ecom-icon"><i class="fas fa-truck"></i></div>
+              <div class="live-status"><span class="live-dot"></span>Live</div>
+            </div>
+            <h3 class="live-title">Delhi Parcel</h3>
+            <p class="live-desc">Parcel management system with real-time tracking, order management, and dashboards.</p>
+            <span class="live-url">delhiparcel.com <i class="fas fa-arrow-up-right-from-square"></i></span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Category: Healthcare -->
+      <div class="live-category">
+        <div class="live-cat-label">
+          <i class="fas fa-heartbeat"></i>
+          <span>Healthcare &amp; Wellness</span>
+        </div>
+        <div class="live-grid live-grid-3">
+          <a href="https://doctcareservices.com" target="_blank" rel="noopener noreferrer" class="live-card glass-card" id="live-doctcare">
+            <div class="live-card-top">
+              <div class="live-icon health-icon"><i class="fas fa-stethoscope"></i></div>
+              <div class="live-status"><span class="live-dot"></span>Live</div>
+            </div>
+            <h3 class="live-title">DoctCare Services</h3>
+            <p class="live-desc">Healthcare portal connecting patients with doctors and medical services.</p>
+            <span class="live-url">doctcareservices.com <i class="fas fa-arrow-up-right-from-square"></i></span>
+          </a>
+          <a href="https://totallyupchaar.com" target="_blank" rel="noopener noreferrer" class="live-card glass-card" id="live-upchaar">
+            <div class="live-card-top">
+              <div class="live-icon health-icon"><i class="fas fa-leaf"></i></div>
+              <div class="live-status"><span class="live-dot"></span>Live</div>
+            </div>
+            <h3 class="live-title">Totally Upchaar</h3>
+            <p class="live-desc">Health &amp; wellness platform offering holistic care services and wellness tracking.</p>
+            <span class="live-url">totallyupchaar.com <i class="fas fa-arrow-up-right-from-square"></i></span>
+          </a>
+          <a href="https://pnsd.in" target="_blank" rel="noopener noreferrer" class="live-card glass-card" id="live-pnsd">
+            <div class="live-card-top">
+              <div class="live-icon health-icon"><i class="fas fa-syringe"></i></div>
+              <div class="live-status"><span class="live-dot"></span>Live</div>
+            </div>
+            <h3 class="live-title">Professional Medical Care</h3>
+            <p class="live-desc">Home injection and medical care service platform with booking management.</p>
+            <span class="live-url">pnsd.in <i class="fas fa-arrow-up-right-from-square"></i></span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Category: Travel & Real Estate -->
+      <div class="live-category">
+        <div class="live-cat-label">
+          <i class="fas fa-plane-departure"></i>
+          <span>Travel &amp; Real Estate</span>
+        </div>
+        <div class="live-grid">
+          <a href="https://ibooking.in" target="_blank" rel="noopener noreferrer" class="live-card glass-card" id="live-ibooking">
+            <div class="live-card-top">
+              <div class="live-icon travel-icon"><i class="fas fa-ticket-alt"></i></div>
+              <div class="live-status"><span class="live-dot"></span>Live</div>
+            </div>
+            <h3 class="live-title">iBooking</h3>
+            <p class="live-desc">Travel booking website with reservation management and customer portal.</p>
+            <span class="live-url">ibooking.in <i class="fas fa-arrow-up-right-from-square"></i></span>
+          </a>
+          <a href="https://ownershood.com" target="_blank" rel="noopener noreferrer" class="live-card glass-card" id="live-ownershood">
+            <div class="live-card-top">
+              <div class="live-icon travel-icon"><i class="fas fa-building"></i></div>
+              <div class="live-status"><span class="live-dot"></span>Live</div>
+            </div>
+            <h3 class="live-title">Ownershood</h3>
+            <p class="live-desc">Real estate platform for property listings, buyer connections, and ownership solutions.</p>
+            <span class="live-url">ownershood.com <i class="fas fa-arrow-up-right-from-square"></i></span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Category: Mobile & Tech -->
+      <div class="live-category">
+        <div class="live-cat-label">
+          <i class="fas fa-mobile-alt"></i>
+          <span>Mobile &amp; Tech Solutions</span>
+        </div>
+        <div class="live-grid live-grid-full">
+          <a href="https://mtechsolution.org/login" target="_blank" rel="noopener noreferrer" class="live-card glass-card live-card-wide" id="live-mtech">
+            <div class="live-card-top">
+              <div class="live-icon mobile-icon"><i class="fas fa-parking"></i></div>
+              <div class="live-card-badges">
+                <div class="live-status"><span class="live-dot"></span>Live</div>
+                <span class="live-tech-badge"><i class="fab fa-android"></i> Android Backend</span>
+              </div>
+            </div>
+            <h3 class="live-title">MTech Solution — Auto Park Backend</h3>
+            <p class="live-desc">
+              Backend platform powering a <strong>reactive Android auto-parking application</strong>. Handles real-time parking slot management,
+              vehicle entry/exit tracking, booking flows, and live availability updates — built for high concurrency and mobile-first API design.
+            </p>
+            <div class="live-card-tags">
+              <span class="stack-tag">Node.js</span>
+              <span class="stack-tag">REST API</span>
+              <span class="stack-tag">Android</span>
+              <span class="stack-tag">Real-time</span>
+              <span class="stack-tag">MySQL</span>
+            </div>
+            <span class="live-url">mtechsolution.org <i class="fas fa-arrow-up-right-from-square"></i></span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Education Section -->
+  <section class="section education-section" id="education" aria-label="Education">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">// academic_background</span>
+        <h2 class="section-title">Education</h2>
+      </div>
+      <div class="edu-grid">
+        <div class="edu-card glass-card" id="edu-btech">
+          <div class="edu-icon"><i class="fas fa-graduation-cap"></i></div>
+          <div class="edu-content">
+            <h3>B.Tech in Computer Science</h3>
+            <span class="edu-institute">CSJMU, Kanpur</span>
+            <div class="edu-meta">
+              <span class="edu-year">2014 – 2018</span>
+              <span class="edu-score">75%</span>
+            </div>
+          </div>
+        </div>
+        <div class="edu-card glass-card" id="edu-12">
+          <div class="edu-icon"><i class="fas fa-school"></i></div>
+          <div class="edu-content">
+            <h3>Class XII</h3>
+            <span class="edu-institute">SPSEC</span>
+            <div class="edu-meta">
+              <span class="edu-year">2013</span>
+              <span class="edu-score">81%</span>
+            </div>
+          </div>
+        </div>
+        <div class="edu-card glass-card" id="edu-10">
+          <div class="edu-icon"><i class="fas fa-book"></i></div>
+          <div class="edu-content">
+            <h3>Class X</h3>
+            <span class="edu-institute">7 Air Force School</span>
+            <div class="edu-meta">
+              <span class="edu-year">2011</span>
+              <span class="edu-score">94%</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Achievements -->
+      <div class="achievements-section">
+        <h3 class="achievements-title">
+          <i class="fas fa-trophy"></i>
+          Achievements
+        </h3>
+        <div class="achievements-grid">
+          <div class="achievement-card glass-card" id="ach-1">
+            <i class="fas fa-star achievement-icon"></i>
+            <p>Technical Head and Event Organiser for college Tech and Cultural Fest (B.Tech / B.E. / BCA)</p>
+          </div>
+          <div class="achievement-card glass-card" id="ach-2">
+            <i class="fas fa-award achievement-icon"></i>
+            <p>Won competitions in <strong>Debate</strong>, <strong>Coding &amp; Reasoning Challenge</strong>, and Inter-branch Football Tournament</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="section contact-section" id="contact" aria-label="Contact me">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">// get_in_touch</span>
+        <h2 class="section-title">Contact Me</h2>
+        <p class="section-subtitle">I'm open to new opportunities. Feel free to reach out!</p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <div class="contact-item glass-card" id="contact-email">
+            <div class="contact-icon">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <div>
+              <span class="contact-label">Email</span>
+              <a href="mailto:a17tiwari@gmail.com" class="contact-value">a17tiwari@gmail.com</a>
+            </div>
+          </div>
+          <div class="contact-item glass-card" id="contact-phone">
+            <div class="contact-icon">
+              <i class="fas fa-phone"></i>
+            </div>
+            <div>
+              <span class="contact-label">Phone</span>
+              <a href="tel:+916394848987" class="contact-value">+91 6394848987</a>
+            </div>
+          </div>
+          <div class="contact-item glass-card" id="contact-location">
+            <div class="contact-icon">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <div>
+              <span class="contact-label">Location</span>
+              <span class="contact-value">Delhi, India</span>
+            </div>
+          </div>
+          <div class="contact-item glass-card" id="contact-linkedin">
+            <div class="contact-icon">
+              <i class="fab fa-linkedin"></i>
+            </div>
+            <div>
+              <span class="contact-label">LinkedIn</span>
+              <a href="https://linkedin.com/in/ankit-tiwari-96886037" target="_blank" rel="noopener noreferrer" class="contact-value">ankit-tiwari-96886037</a>
+            </div>
+          </div>
+        </div>
+        <div class="contact-form-wrap glass-card" id="contact-form-card">
+          <form class="contact-form" id="contact-form" novalidate>
+            <div class="form-group">
+              <label for="cf-name">Your Name</label>
+              <input type="text" id="cf-name" name="name" placeholder="John Doe" required autocomplete="name" />
+            </div>
+            <div class="form-group">
+              <label for="cf-email">Your Email</label>
+              <input type="email" id="cf-email" name="email" placeholder="john@example.com" required autocomplete="email" />
+            </div>
+            <div class="form-group">
+              <label for="cf-subject">Subject</label>
+              <input type="text" id="cf-subject" name="subject" placeholder="Job Opportunity" />
+            </div>
+            <div class="form-group">
+              <label for="cf-message">Message</label>
+              <textarea id="cf-message" name="message" rows="5" placeholder="Hi Ankit, I'd love to connect..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-full" id="send-msg-btn">
+              <i class="fas fa-paper-plane"></i> Send Message
+            </button>
+            <div class="form-success" id="form-success" aria-live="polite">
+              <i class="fas fa-check-circle"></i> Message sent successfully! I'll get back to you soon.
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-logo">
+        <span class="logo-bracket">&lt;</span>AT<span class="logo-bracket">/&gt;</span>
+      </div>
+      <p class="footer-text">
+        Designed &amp; Built by <strong>Ankit Tiwari</strong> · Delhi, India
+      </p>
+      <div class="footer-socials">
+        <a href="https://linkedin.com/in/ankit-tiwari-96886037" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="social-link">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="mailto:a17tiwari@gmail.com" aria-label="Email" class="social-link">
+          <i class="fas fa-envelope"></i>
+        </a>
+        <a href="tel:+916394848987" aria-label="Phone" class="social-link">
+          <i class="fas fa-phone"></i>
+        </a>
+      </div>
+      <p class="footer-copy">&copy; <span id="footer-year"></span> Ankit Tiwari. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Back to top -->
+  <button class="back-to-top" id="back-to-top" aria-label="Back to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+</html>
