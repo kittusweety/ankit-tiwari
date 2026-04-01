@@ -343,3 +343,38 @@ function animateGlow() {
   requestAnimationFrame(animateGlow);
 }
 animateGlow();
+
+// ─── 14. ALL PROJECTS FILTER LOGIC ─────────────
+const filterBtns = document.querySelectorAll('.filter-btn');
+const apCards = document.querySelectorAll('.ap-card');
+
+if (filterBtns.length > 0 && apCards.length > 0) {
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      // Remove active class
+      filterBtns.forEach(b => b.classList.remove('active'));
+      // Add active to clicked
+      btn.classList.add('active');
+
+      const filterValue = btn.getAttribute('data-filter');
+
+      apCards.forEach(card => {
+        card.style.transition = 'opacity 0.3s ease';
+        
+        if (filterValue === 'all') {
+          card.style.display = 'flex';
+          setTimeout(() => card.style.opacity = '1', 10);
+        } else {
+          const categories = card.getAttribute('data-category').split(' ');
+          if (categories.includes(filterValue)) {
+            card.style.display = 'flex';
+            setTimeout(() => card.style.opacity = '1', 10);
+          } else {
+            card.style.opacity = '0';
+            setTimeout(() => card.style.display = 'none', 300);
+          }
+        }
+      });
+    });
+  });
+}
