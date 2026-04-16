@@ -532,6 +532,7 @@ ul { list-style: none; }
 .card-top-right { right: -40px; top: 10%; animation-delay: 0s; }
 .card-bottom-left { left: -40px; bottom: 15%; animation-delay: -1.5s; }
 .card-top-left { left: -20px; top: 10%; animation-delay: -3s; }
+.card-bottom-right { right: -20px; bottom: 10%; animation-delay: -4.5s; }
 
 @keyframes floatCard {
   0%, 100% { transform: translateY(0px); }
