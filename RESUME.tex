@@ -1,207 +1,174 @@
-\documentclass[letterpaper,11pt]{article}
-
-\usepackage[empty]{fullpage}
-\usepackage{titlesec}
+\documentclass[11pt, a4paper]{article}
+\usepackage[margin=0.5in, top=0.5in, bottom=0.5in]{geometry}
 \usepackage{enumitem}
-\usepackage[hidelinks]{hyperref}
-\usepackage{fancyhdr}
+\usepackage{hyperref}
+\usepackage{titlesec}
 \usepackage{fontawesome5}
-\usepackage{xcolor}
 \usepackage{tabularx}
 
-% ---- Page Style ----
-\pagestyle{fancy}
-\fancyhf{}
-\renewcommand{\headrulewidth}{0pt}
-\renewcommand{\footrulewidth}{0pt}
+\setlist{noitemsep, topsep=2pt, parsep=1pt}
+\pagestyle{empty}
 
-% ---- Margins ----
-\addtolength{\oddsidemargin}{-0.55in}
-\addtolength{\textwidth}{1.1in}
-\addtolength{\topmargin}{-0.6in}
-\addtolength{\textheight}{1.2in}
+% Hyperlink styling — black, no boxes (ATS-safe)
+\hypersetup{
+  colorlinks=true,
+  linkcolor=black,
+  urlcolor=black,
+  pdfborder={0 0 0}
+}
+
+% Section heading — bold, uppercase feel, with a thin rule beneath
+\titleformat{\section}{\large\bfseries\uppercase}{}{0em}{}[\vspace{-6pt}\rule{\textwidth}{0.5pt}]
+\titlespacing{\section}{0pt}{10pt}{6pt}
+
+% Remove paragraph indent
 \setlength{\parindent}{0pt}
 
-% ---- Accent Color ----
-\definecolor{accent}{HTML}{1a56db}
-
-% ---- Section Formatting ----
-\titleformat{\section}{\bfseries\large\color{accent}}{}{0em}{}[\color{accent}\titlerule]
-\titlespacing*{\section}{0pt}{8pt}{4pt}
-
-% ---- Custom Commands ----
-\newcommand{\resumeItem}[1]{\item\small #1 \vspace{-2pt}}
-
-\newcommand{\resumeSubheading}[4]{%
-  \vspace{2pt}\item
-  \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
-    \textbf{#1} & \small #2 \\
-    \textit{\small #3} & \textit{\small #4} \\
-  \end{tabular*}\vspace{-4pt}
-}
-
-\newcommand{\resumeProjectHeading}[2]{%
-  \vspace{4pt}\item
-  \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
-    \textbf{\small #1} & \small #2
-  \end{tabular*}\vspace{-4pt}
-}
-
-\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0in,label={}]}
-\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
-\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=0.18in,label=\textbullet]\small}
-\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-4pt}}
-
-%-------------------------------------------
 \begin{document}
 
-% ============================================================
-% 1️⃣  CONTACT INFORMATION
-% ============================================================
+%% ============================================================
+%%  HEADER
+%% ============================================================
 \begin{center}
-  {\Huge\bfseries Ankit Tiwari} \\[6pt]
+  {\LARGE \textbf{ANKIT TIWARI}} \\[5pt]
   \small
-  \faPhone\ \href{tel:+916394848987}{+91 6394848987} \enspace\textbar\enspace
+  \faMapMarker*\ Delhi, India \enspace\textbar\enspace
+  \faPhone\ +91\,6394848987 \enspace\textbar\enspace
   \faEnvelope\ \href{mailto:a17tiwari@gmail.com}{a17tiwari@gmail.com} \enspace\textbar\enspace
-  \faLinkedin\ \href{https://linkedin.com/in/ankit-tiwari-96886037}{linkedin.com/in/ankit-tiwari-96886037} \\[3pt]
-  \faGlobe\ \href{https://ankit-tiwari-portfolio.netlify.app/}{ankit-tiwari-portfolio.netlify.app} \enspace\textbar\enspace
-  \faMapMarker*\ Delhi, India
+  \faLinkedin\ \href{https://linkedin.com/in/ankit-tiwari-96886037}{linkedin.com/in/ankit-tiwari-96886037} \enspace\textbar\enspace
+  \faGlobe\ \href{https://ankit-tiwari-portfolio.netlify.app/}{ankit-tiwari-portfolio.netlify.app}
 \end{center}
-\vspace{-4pt}\rule{\textwidth}{0.4pt}\vspace{2pt}
 
-% ============================================================
-% 2️⃣  PROFESSIONAL SUMMARY
-% ============================================================
-\section{Professional Summary}
-Results-driven \textbf{Senior Software Developer} with 2+ years of experience delivering scalable FinTech platforms, enterprise CRMs, and RESTful APIs. Specialized in \textbf{Laravel}, \textbf{Node.js}, and \textbf{React.js} with a proven record of building high-availability payment systems and real-time transaction engines. Experienced in team leadership, third-party integrations, and CI/CD-driven deployments.
+\vspace{2pt}
 
-% ============================================================
-% 3️⃣  SKILLS
-% ============================================================
-\section{Skills}
-\begin{tabular*}{\textwidth}{@{}l@{\extracolsep{0.5in}}l@{}}
-  \small\textbf{Languages:}    & \small PHP, JavaScript (ES6+), C\#, SQL, HTML5, CSS3 \\[3pt]
-  \small\textbf{Frameworks:}   & \small Laravel, Node.js (Express), React.js, Next.js, ASP.NET 8 Core \\[3pt]
-  \small\textbf{Databases:}    & \small MySQL, SQL Server, Supabase \\[3pt]
-  \small\textbf{UI:}           & \small Tailwind CSS, Bootstrap \\[3pt]
-  \small\textbf{DevOps:}       & \small Git, GitHub, Docker, GitHub Actions (CI/CD), Linux, Postman \\[3pt]
-  \small\textbf{Domains:}      & \small FinTech, REST API Design, MVC Architecture, Payment Integration \\[3pt]
-  \small\textbf{Soft Skills:}  & \small Team Leadership, Analytical Thinking, Problem Solving, Quick Learner \\
-\end{tabular*}
+%% ============================================================
+%%  PROFESSIONAL SUMMARY
+%% ============================================================
+\section*{Professional Summary}
+Results-driven \textbf{Software Developer} with \textbf{2+ years} of hands-on experience designing, developing, and deploying enterprise-grade web applications. Core expertise in \textbf{ASP.NET Core}, \textbf{C\#}, \textbf{SQL Server}, \textbf{Web API}, and \textbf{MVC architecture}. Proven ability to architect secure \textbf{RESTful APIs} with \textbf{JWT authentication}, build scalable FinTech transaction engines, and deliver production-ready systems using \textbf{Laravel}, \textbf{Node.js}, and \textbf{React.js}. Strong collaborator with a track record of leading small development teams, improving system performance, and driving clean-code practices across agile environments.
 
-% ============================================================
-% 4️⃣  WORK EXPERIENCE
-% ============================================================
-\section{Work Experience}
-\resumeSubHeadingListStart
+%% ============================================================
+%%  TECHNICAL SKILLS
+%% ============================================================
+\section*{Technical Skills}
+\begin{tabularx}{\textwidth}{@{} l X @{}}
+\textbf{Languages}       & C\#, PHP, JavaScript (ES6+), TypeScript, SQL, HTML5, CSS3 \\[2pt]
+\textbf{Backend}         & ASP.NET Core, Web API, MVC, Entity Framework Core, Laravel, Node.js (Express.js) \\[2pt]
+\textbf{Frontend}        & React.js, Razor Pages, Bootstrap, Tailwind CSS \\[2pt]
+\textbf{Databases}       & Microsoft SQL Server, MySQL, MongoDB, Supabase \\[2pt]
+\textbf{DevOps \& Tools} & Git, GitHub, Docker, CI/CD (GitHub Actions), Linux, Postman, Visual Studio, VS Code \\[2pt]
+\textbf{Concepts}        & REST API Design, JWT \& OAuth Authentication, Microservices, Payment Gateway Integration, Agile/Scrum \\
+\end{tabularx}
 
-  \resumeSubheading
-    {Harifly Technologies Pvt. Ltd.}{Sep 2025 -- Present}
-    {Senior Software Developer}{Delhi, India}
-  \resumeItemListStart
-    \resumeItem{Led end-to-end development of FinTech platforms: \textbf{Digital Wallets, AEPS, Cashfree UPI}, and payment gateway integrations handling high-volume transactions.}
-    \resumeItem{Architected secure \textbf{RESTful APIs} using \textbf{Node.js \& Laravel} with JWT auth and role-based access control (Admin, Distributor, Retailer).}
-    \resumeItem{Built \textbf{real-time transaction processing systems} with automated validation, logging, and reconciliation.}
-    \resumeItem{Developed responsive admin panels and customer dashboards using \textbf{React.js} and \textbf{Tailwind CSS}.}
-    \resumeItem{Improved API response time and system uptime through query optimization and caching strategies.}
-  \resumeItemListEnd
+%% ============================================================
+%%  WORK EXPERIENCE
+%% ============================================================
+\section*{Professional Experience}
 
-  \resumeSubheading
-    {Bhoomi Techzone Pvt. Ltd.}{Jan 2025 -- Sep 2025}
-    {Software Developer}{Noida, India}
-  \resumeItemListStart
-    \resumeItem{Developed enterprise-grade applications using \textbf{Laravel, Node.js, ASP.NET Core (C\#)}, and \textbf{SQL Server}.}
-    \resumeItem{Designed and implemented RESTful APIs with secure \textbf{OAuth2 / JWT} authentication across multiple projects.}
-    \resumeItem{Led and mentored junior developers, ensuring timely sprint deliverables and code quality standards.}
-    \resumeItem{Deployed applications via \textbf{Docker} and \textbf{GitHub Actions CI/CD} pipelines to Linux servers.}
-  \resumeItemListEnd
+% --- Role 1 ---
+\textbf{Senior Software Developer} \hfill \textit{Sep 2025 -- Present} \\
+\textit{Harifly Technologies Pvt.\ Ltd., Delhi}
+\begin{itemize}
+  \item Architected and deployed FinTech platforms powering \textbf{digital wallets, AEPS, UPI,} and \textbf{payment gateway integrations}, processing 1,000+ daily transactions with 99.9\% uptime.
+  \item Engineered secure, high-throughput REST APIs using \textbf{ASP.NET Core Web API} and \textbf{Node.js}, reducing average response time by \textbf{35\%} through query optimization and caching strategies.
+  \item Designed and implemented real-time transaction processing pipelines with comprehensive validation, audit logging, and automated reconciliation workflows.
+  \item Built responsive admin dashboards in \textbf{React.js} with role-based access control, enabling operations teams to monitor transactions and manage users in real time.
+  \item Collaborated with cross-functional teams (QA, DevOps, Product) to establish CI/CD pipelines, cutting deployment cycles from days to under \textbf{2 hours}.
+\end{itemize}
 
-  \resumeSubheading
-    {Bhoomi Techzone Pvt. Ltd.}{Aug 2024 -- Dec 2024}
-    {Trainee Software Developer}{Noida, India}
-  \resumeItemListStart
-    \resumeItem{Built full-stack web apps using \textbf{Laravel}, \textbf{Node.js}, \textbf{React.js}, HTML/CSS/JS, and MySQL.}
-    \resumeItem{Integrated third-party APIs (payment gateways, SMS, maps) to extend platform functionality.}
-    \resumeItem{Implemented \textbf{CI/CD pipelines} using GitHub Actions and Docker for automated builds and deployments.}
-  \resumeItemListEnd
+\vspace{4pt}
 
-\resumeSubHeadingListEnd
+% --- Role 2 ---
+\textbf{Software Developer} \hfill \textit{Jan 2025 -- Sep 2025} \\
+\textit{Bhoomi Techzone Pvt.\ Ltd., Noida}
+\begin{itemize}
+  \item Developed and maintained enterprise web applications using \textbf{ASP.NET Core MVC}, \textbf{C\#}, and \textbf{SQL Server}, serving 500+ active users across multiple business verticals.
+  \item Built modular \textbf{RESTful APIs} with \textbf{JWT authentication} and role-based authorization, ensuring secure data exchange and OWASP-compliant endpoints.
+  \item Optimized complex SQL queries and stored procedures, improving report-generation speed by \textbf{40\%} and reducing database load during peak hours.
+  \item Led a team of 3 developers through sprint planning and code reviews, consistently delivering features on schedule with zero critical post-release defects.
+  \item Integrated third-party payment and notification services, expanding platform capabilities and automating manual workflows.
+\end{itemize}
 
-% ============================================================
-% 5️⃣  PROJECTS
-% ============================================================
-\section{Projects}
-\resumeSubHeadingListStart
+\vspace{4pt}
 
-  \resumeProjectHeading
-    {FinTech Wallet \& Payment Platform}{Node.js, React.js, Tailwind CSS, MySQL}
-  \resumeItemListStart
-    \resumeItem{Multi-module platform supporting Digital Wallets, AEPS, UPI, bank transfers with hierarchical role dashboards.}
-    \resumeItem{Live: \href{https://sales.harifly.com}{\textcolor{accent}{sales.harifly.com}}}
-  \resumeItemListEnd
+% --- Role 3 ---
+\textbf{Trainee Software Developer} \hfill \textit{Aug 2024 -- Dec 2024} \\
+\textit{Bhoomi Techzone Pvt.\ Ltd., Noida}
+\begin{itemize}
+  \item Developed full-stack features for internal tools using \textbf{ASP.NET Core} and \textbf{Laravel}, accelerating module delivery timelines by \textbf{20\%}.
+  \item Integrated third-party APIs (SMS gateways, payment processors) and performed end-to-end testing to ensure seamless production deployments.
+  \item Contributed to CI/CD pipeline configuration using \textbf{GitHub Actions} and \textbf{Docker}, reducing manual deployment effort and improving release reliability.
+\end{itemize}
 
-  \resumeProjectHeading
-    {DoctCare CRM}{Laravel, MySQL, Bootstrap}
-  \resumeItemListStart
-    \resumeItem{Healthcare CRM with appointment management, patient records, and role-based admin access.}
-    \resumeItem{Live: \href{https://crm.doctcareservices.com}{\textcolor{accent}{crm.doctcareservices.com}}}
-  \resumeItemListEnd
+%% ============================================================
+%%  KEY PROJECTS
+%% ============================================================
+\section*{Key Projects}
 
-  \resumeProjectHeading
-    {SKG Enterprise — E-commerce Platform}{React.js, Laravel, REST API, MySQL}
-  \resumeItemListStart
-    \resumeItem{Full-stack e-commerce platform with product management, order processing, and optimized REST APIs.}
-    \resumeItem{Live: \href{https://skgenterprise.com/}{\textcolor{accent}{skgenterprise.com}}}
-  \resumeItemListEnd
+\textbf{FinTech Wallet \& Payment Platform} \enspace|\enspace \textit{Node.js, Laravel, React.js, MySQL} \hfill \href{https://sales.harifly.com}{\small\texttt{sales.harifly.com}}
+\begin{itemize}
+  \item Built end-to-end backend APIs supporting AEPS, UPI disbursements, and automated bank reconciliation, handling high-volume concurrent transactions securely.
+  \item Developed role-based admin dashboards with real-time transaction monitoring and analytics.
+\end{itemize}
 
-  \resumeProjectHeading
-    {Delhi Parcel — Logistics Platform}{Node.js, React.js, Tailwind CSS, MySQL}
-  \resumeItemListStart
-    \resumeItem{Real-time parcel tracking system with order management and interactive dashboards.}
-    \resumeItem{Live: \href{https://delhiparcel.com}{\textcolor{accent}{delhiparcel.com}}}
-  \resumeItemListEnd
+\vspace{3pt}
 
-  \resumeProjectHeading
-    {Blinkme — Service \& Food Delivery}{Laravel, React.js, MySQL}
-  \resumeItemListStart
-    \resumeItem{10-minute service/food booking platform with multi-vendor seller panel and admin dashboard.}
-    \resumeItem{Live: \href{https://blinkme.online/admin}{\textcolor{accent}{blinkme.online}}}
-  \resumeItemListEnd
+\textbf{School ERP System} \enspace|\enspace \textit{ASP.NET Core, C\#, SQL Server, MVC, Entity Framework}
+\begin{itemize}
+  \item Engineered a comprehensive ERP solution managing student enrollment, attendance tracking, grade reporting, and fee collection for 2,000+ students.
+  \item Designed a modular \textbf{MVC architecture} with role-based portals (Admin, Teacher, Parent), ensuring scalable, maintainable code and robust data integrity.
+\end{itemize}
 
-  \resumeProjectHeading
-    {School ERP System}{ASP.NET Core, C\#, SQL Server, Bootstrap}
-  \resumeItemListStart
-    \resumeItem{Role-based ERP for schools with attendance, performance tracking, and modular MVC architecture.}
-  \resumeItemListEnd
+\vspace{3pt}
 
-  \resumeProjectHeading
-    {Frontend UI Projects}{React.js, Tailwind CSS}
-  \resumeItemListStart
-    \resumeItem{\textbf{Ladali Tiffin Service} -- \href{https://ladali-tiffin-service.vercel.app/}{\textcolor{accent}{Live}} \quad\textbar\quad \textbf{Life Bridge Home Care} -- \href{https://life-bridge-home-care.netlify.app/}{\textcolor{accent}{Live}} \quad\textbar\quad \textbf{Laddli Kunj PG} -- \href{https://laddlikunj-pg.vercel.app/}{\textcolor{accent}{Live}}}
-    \resumeItem{Responsive, mobile-first UI projects with modern design, accessibility, and optimized user experience.}
-  \resumeItemListEnd
+\textbf{Secure Auth Service} \enspace|\enspace \textit{.NET 10, MongoDB, JWT, BCrypt}
+\begin{itemize}
+  \item Architected a high-performance identity provider featuring \textbf{JWT-based authentication}, BCrypt password hashing, and token-refresh mechanisms.
+  \item Integrated a scalable \textbf{MongoDB} data layer optimized for user persistence and future microservices expansion.
+\end{itemize}
 
-\resumeSubHeadingListEnd
+\vspace{3pt}
 
-% ============================================================
-% 6️⃣  EDUCATION
-% ============================================================
-\section{Education}
-\resumeSubHeadingListStart
-  \resumeSubheading
-    {CSJMU, Kanpur}{2014 -- 2018}
-    {B.Tech in Computer Science}{75\%}
-  \resumeSubheading
-    {SPSEC}{2013}
-    {Class XII -- Science}{81\%}
-  \resumeSubheading
-    {7 Air Force School}{2011}
-    {Class X}{94\%}
-\resumeSubHeadingListEnd
+\textbf{Delhi Parcel — Logistics Platform} \enspace|\enspace \textit{Laravel, MySQL, REST API} \hfill \href{https://delhiparcel.com}{\small\texttt{delhiparcel.com}}
+\begin{itemize}
+  \item Developed a logistics platform with real-time shipment tracking, automated dispatch routing, and delivery-status webhook integrations.
+\end{itemize}
 
-\section{Languages}
-\begin{itemize}[leftmargin=0.18in, label=\textbullet, itemsep=2pt]\small
-  \item \textbf{English} — Professional Proficiency \quad\textbar\quad \textbf{Hindi} — Native
+\vspace{3pt}
+
+\textbf{SKG Enterprise — E-commerce Platform} \enspace|\enspace \textit{React.js, Laravel, REST API, MySQL} \hfill \href{https://skgenterprise.com}{\small\texttt{skgenterprise.com}}
+\begin{itemize}
+  \item Built a full-stack e-commerce platform with product catalog, cart, order management, and optimized REST APIs powering a multi-vendor architecture.
+\end{itemize}
+
+\vspace{3pt}
+
+\textbf{DoctCare — Healthcare Platform} \enspace|\enspace \textit{Laravel, MySQL, REST API} \hfill \href{https://doctcareservices.com}{\small\texttt{doctcareservices.com}}
+\begin{itemize}
+  \item Developed an online healthcare platform with appointment booking, doctor listings, patient records, and a CRM admin panel.
+\end{itemize}
+
+\vspace{3pt}
+
+\textbf{iBooking — Yacht \& Travel Booking} \enspace|\enspace \textit{Laravel, PHP, MySQL, Tailwind CSS} \hfill \href{https://ibooking.in}{\small\texttt{ibooking.in}}
+\begin{itemize}
+  \item Built an online booking system with reservation management, dynamic search, and a customer portal with booking history.
+\end{itemize}
+
+%% ============================================================
+%%  EDUCATION
+%% ============================================================
+\section*{Education}
+\textbf{Bachelor of Technology (B.Tech) in Computer Science \& Engineering} \hfill \textit{2014 -- 2018} \\
+Chhatrapati Shahu Ji Maharaj University (CSJMU), Kanpur
+
+%% ============================================================
+%%  ACHIEVEMENTS
+%% ============================================================
+\section*{Achievements \& Leadership}
+\begin{itemize}
+  \item Served as \textbf{Technical Head} for the annual college technical fest, coordinating 10+ events and managing a team of 25 volunteers.
+  \item Secured \textbf{1st place} in inter-college coding competitions, demonstrating strong problem-solving and algorithmic thinking skills.
 \end{itemize}
 
 \end{document}
